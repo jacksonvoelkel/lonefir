@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>PDX</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" />
+	<link rel="stylesheet" type="text/css" href="css/own_style.css">
+</head>
+<body>
+	<div id="map"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js"></script> 
+	<!-- <script src="js/leaflet-hash.js"></script> -->
+				
+	<script>
+		
+		var loc = L.latLng(45.51, -122.67)
+		var map = L.map('map', { zoomControl:true, center: loc, zoom: 12 });
+		//var hash = new L.Hash(map); //add hashes to html address to easy share locations
+		var bm = L.tileLayer('http://b.sm.mapstack.stamen.com/((toner,$fff[@80]),mapbox-water,parks)/{z}/{x}/{y}.png');
+		bm.addTo(map);	
+		
+		var cir = L.circle(loc, {
+			color: '#578398',
+			fillColor: '#578398',
+			fillOpacity: 0.3,
+			opacity: 1,
+			radius: 1500
+		});
+		cir.addTo(map);
+	</script>
+</body>
+</html>
+	
